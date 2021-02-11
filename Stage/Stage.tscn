@@ -1,0 +1,162 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://textures/Dark/texture_04.png" type="Texture" id=1]
+[ext_resource path="res://CombatantsFolder/Combatant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CombatantsFolder/DummyCombatant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/HealthBar.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_world_triplanar = true
+albedo_color = Color( 0.843137, 0.45098, 0.45098, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_world_triplanar = true
+albedo_color = Color( 0.933333, 0.678431, 0.678431, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_world_triplanar = true
+albedo_color = Color( 0.541176, 0.282353, 0.282353, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSky" id=10]
+sky_top_color = Color( 0.192157, 0.615686, 0.85098, 1 )
+sky_horizon_color = Color( 0.85098, 0.980392, 0.839216, 1 )
+sun_color = Color( 0.631373, 0.25098, 0.25098, 1 )
+
+[sub_resource type="Environment" id=11]
+background_mode = 3
+background_sky = SubResource( 10 )
+background_color = Color( 0.270588, 0.282353, 0.529412, 1 )
+background_energy = 2.76
+ambient_light_color = Color( 0.262745, 0.482353, 0.717647, 1 )
+ambient_light_energy = 2.98
+tonemap_mode = 2
+tonemap_white = 1.18
+auto_exposure_scale = 0.01
+glow_strength = 1.31
+
+[node name="Stage" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.621995, 1.27571e-07, -0.783021, 0.783021, -1.01336e-07, 0.621995, 0, -1, -1.62921e-07, -9.36654, 30.7981, 0 )
+light_energy = 4.27
+shadow_enabled = true
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+collision_mask = 0
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+width = 10.0
+depth = 34.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
+width = 10.0
+height = 20.0
+depth = 34.0
+material = SubResource( 2 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
+width = 10.0
+height = 39.0
+depth = 10.0
+material = SubResource( 3 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15 )
+width = 10.0
+height = 64.0
+depth = 20.0
+material = SubResource( 4 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10 )
+width = 10.0
+height = 63.4497
+depth = 11.0
+material = SubResource( 5 )
+
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 33 )
+width = 10.0
+height = 35.6925
+depth = 34.9007
+material = SubResource( 6 )
+
+[node name="CSGBox7" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -42 )
+width = 10.0
+height = 35.6925
+depth = 34.9007
+material = SubResource( 7 )
+
+[node name="CSGBox8" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -34 )
+width = 20.0
+height = 36.0
+depth = 35.0
+material = SubResource( 8 )
+
+[node name="CSGBox9" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 34 )
+width = 20.0
+height = 36.0
+depth = 35.0
+material = SubResource( 9 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 30, 6, 0 )
+projection = 2
+current = true
+fov = 100.0
+size = 0.25
+near = 0.3
+
+[node name="Combatant" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.5, 0, -1.62921e-07, 0, 0.5, 0, 1.62921e-07, 0, -0.5, 0, 1, 10 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 11 )
+
+[node name="DummyCombatant" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, -5 )
+
+[node name="HealhBars" parent="." instance=ExtResource( 4 )]

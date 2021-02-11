@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FBX Files - Jan 25/CombatantAnim.gltf" type="PackedScene" id=1]
+
+[node name="CombatantAnim" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 9, 0 )
+
+[node name="BoneAttachment" parent="AuxScene 2/Node/Skeleton" index="0"]
+transform = Transform( 0.587589, -0.353687, 0.727767, 0.397656, 0.909526, 0.120959, -0.704704, 0.218327, 0.675074, -14.9267, 140.128, 54.0349 )
+
+[node name="BoneAttachment 2" parent="AuxScene 2/Node/Skeleton" index="1"]
+transform = Transform( 0.570442, -0.339811, 0.747747, 0.527086, 0.849662, -0.015978, -0.629902, 0.403241, 0.663792, -15.312, 140.616, 52.4636 )
+
+[node name="BoneAttachment 3" parent="AuxScene 2/Node/Skeleton" index="2"]
+transform = Transform( -0.563875, 0.39036, 0.727781, -0.190696, -0.918967, 0.345158, 0.803542, 0.0558414, 0.592622, -10.2913, 139.934, 58.508 )
+
+[node name="BoneAttachment 4" parent="AuxScene 2/Node/Skeleton" index="3"]
+transform = Transform( 0.272952, -0.663779, 0.696344, 0.875294, 0.471707, 0.106551, -0.399196, 0.580422, 0.709755, -13.8804, 140.54, 58.9508 )
+
+[node name="BoneAttachment 5" parent="AuxScene 2/Node/Skeleton" index="4"]
+transform = Transform( 0.418816, -0.577446, 0.700821, 0.73038, 0.672794, 0.117872, -0.539572, 0.462498, 0.703532, -14.7793, 140.609, 56.5271 )
+
+[node name="BoneAttachment 6" parent="AuxScene 2/Node/Skeleton" index="5"]
+transform = Transform( 0.8964, -0.402945, -0.184666, 0.256816, 0.811717, -0.524558, 0.361264, 0.422789, 0.831106, -5.72923, 151.036, -1.28764 )
+
+[node name="BoneAttachment 7" parent="AuxScene 2/Node/Skeleton" index="6"]
+transform = Transform( 0.8964, -0.402945, -0.184666, 0.256816, 0.811717, -0.524558, 0.361264, 0.422789, 0.831106, -5.72923, 151.036, -1.28764 )
+
+[node name="BoneAttachment 8" parent="AuxScene 2/Node/Skeleton" index="7"]
+transform = Transform( 0.8964, -0.402945, -0.184666, 0.256816, 0.811717, -0.524558, 0.361264, 0.422789, 0.831106, -5.72923, 151.036, -1.28764 )
+
+[node name="BoneAttachment 9" parent="AuxScene 2/Node/Skeleton" index="8"]
+transform = Transform( 0.496282, 0.866296, -0.056887, 0.157499, -0.0254019, 0.987192, 0.853755, -0.498885, -0.149047, -8.28692, 129.549, 28.2218 )
+
+[node name="BoneAttachment 10" parent="AuxScene 2/Node/Skeleton" index="9"]
+transform = Transform( 0.497616, 0.866623, -0.0366258, 0.154408, -0.0469524, 0.986891, 0.853543, -0.496748, -0.157178, -9.46216, 131.297, 28.3907 )
+
+[node name="BoneAttachment 11" parent="AuxScene 2/Node/Skeleton" index="10"]
+transform = Transform( 0.0739548, 0.992014, 0.102172, 0.0378795, -0.105173, 0.993732, 0.996542, -0.069621, -0.0453549, -9.61988, 132.814, 29.1307 )
+
+[node name="BoneAttachment 12" parent="AuxScene 2/Node/Skeleton" index="11"]
+transform = Transform( -0.977661, -0.204845, -0.0470761, -0.0595468, 0.0551434, 0.996701, -0.201574, 0.977239, -0.0661094, -9.99197, 136.053, 34.5857 )
+
+[node name="BoneAttachment 13" parent="AuxScene 2/Node/Skeleton" index="12"]
+transform = Transform( 0.862564, -0.482719, 0.151541, 0.371262, 0.807373, 0.458599, -0.343725, -0.33931, 0.875626, -8.20411, 136.986, 28.1935 )
+
+[node name="BoneAttachment 14" parent="AuxScene 2/Node/Skeleton" index="13"]
+transform = Transform( 0.983097, -0.030086, -0.180599, -0.0440275, 0.918613, -0.392697, 0.177715, 0.394011, 0.901761, 4.299, 3.16512, -30.7077 )
+
+[node name="BoneAttachment 15" parent="AuxScene 2/Node/Skeleton" index="14"]
+transform = Transform( 0.833244, 0.110609, -0.541728, 0.0894349, 0.93992, 0.329472, 0.545624, -0.32298, 0.77329, -13.344, 3.14946, 40.4157 )

@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://HealthBarTheme.tres" type="Theme" id=1]
+[ext_resource path="res://FightTimerBitmapFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/CombatanOne.gd" type="Script" id=3]
+[ext_resource path="res://UI/CombatantTwo.gd" type="Script" id=4]
+[ext_resource path="res://Miscellaneous Stuff/buff4.png" type="Texture" id=5]
+
+[node name="HealhBars" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.63
+margin_right = -15.63
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CombatanOne" type="ProgressBar" parent="."]
+margin_right = 450.0
+margin_bottom = 32.0
+theme = ExtResource( 1 )
+value = 90.0
+percent_visible = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CombatanOne"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = 13.0
+margin_right = -40.0
+margin_bottom = 53.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VictoryOne" type="TextureRect" parent="CombatanOne/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="VictoryTwo" type="TextureRect" parent="CombatanOne/HBoxContainer"]
+visible = false
+margin_left = 42.0
+margin_right = 74.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="CombatantTwo" type="ProgressBar" parent="."]
+margin_left = 995.0
+margin_right = 1445.0
+margin_bottom = 32.0
+rect_scale = Vector2( -1, 1 )
+theme = ExtResource( 1 )
+value = 50.0
+percent_visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CombatantTwo"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = 13.0
+margin_right = -50.0
+margin_bottom = 53.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VictoryOne" type="TextureRect" parent="CombatantTwo/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="VictoryTwo" type="TextureRect" parent="CombatantTwo/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 39.0
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 40.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

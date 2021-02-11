@@ -1,0 +1,158 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FBX Files - Jan 25/CombatantAnim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CombatantsFolder/Combatant.gd" type="Script" id=3]
+[ext_resource path="res://FBX Files - Jan 25/Walking.anim" type="Animation" id=4]
+[ext_resource path="res://FBX Files - Jan 25/FightingIdle.anim" type="Animation" id=5]
+[ext_resource path="res://FBX Files - Jan 25/HighKick.anim" type="Animation" id=6]
+[ext_resource path="res://FBX Files - Jan 25/Kicking.anim" type="Animation" id=7]
+[ext_resource path="res://FBX Files - Jan 25/LowKick.anim" type="Animation" id=8]
+[ext_resource path="res://FBX Files - Jan 25/Punching.anim" type="Animation" id=9]
+[ext_resource path="res://FBX Files - Jan 25/HighJab.anim" type="Animation" id=10]
+[ext_resource path="res://FBX Files - Jan 25/WalkBack.anim" type="Animation" id=11]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 3, 6, 2 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2.50144, 1, 3.18964 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2, 2, 3.32192 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 3, 1, 4 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.64393, 1.96829, 6.84278 )
+
+[node name="Combatant" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CombatantAnim")
+autoplay = "FightingIdle"
+anims/FightingIdle = ExtResource( 5 )
+anims/HighJab = ExtResource( 10 )
+anims/HighKick = ExtResource( 6 )
+anims/Kicking = ExtResource( 7 )
+anims/LowKick = ExtResource( 8 )
+anims/Punching = ExtResource( 9 )
+anims/WalkBack = ExtResource( 11 )
+anims/Walking = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+visible = false
+shape = SubResource( 1 )
+
+[node name="CombatantAnim" parent="." instance=ExtResource( 2 )]
+
+[node name="BoneAttachment" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="0"]
+transform = Transform( 0.970075, 0.176013, -0.167249, 0.239419, -0.808013, 0.538324, -0.040387, -0.562258, -0.825975, -6.86206, 142.698, 50.0694 )
+
+[node name="BoneAttachment 2" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="1"]
+transform = Transform( 0.586314, 0.804883, -0.0916442, 0.6867, -0.433808, 0.583312, 0.429742, -0.404936, -0.807062, -4.83203, 140.742, 50.7565 )
+
+[node name="BoneAttachment 3" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="2"]
+transform = Transform( -0.429519, 0.726432, -0.536479, 0.120458, 0.634848, 0.763189, 0.894988, 0.263181, -0.360184, -8.78298, 147.321, 46.2979 )
+
+[node name="BoneAttachment 4" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="3"]
+transform = Transform( 0.864423, -0.441004, -0.241428, -0.258403, -0.801628, 0.539092, -0.431277, -0.403618, -0.806903, -9.12175, 145.079, 47.1118 )
+
+[node name="BoneAttachment 5" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="4"]
+transform = Transform( 0.923326, -0.310649, -0.225756, -0.148756, -0.831316, 0.535523, -0.354034, -0.46088, -0.813787, -8.94897, 144.139, 49.3429 )
+
+[node name="BoneAttachment 6" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="5"]
+transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+
+[node name="BoneAttachment 7" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="6"]
+transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+
+[node name="BoneAttachment 8" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="7"]
+transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+
+[node name="BoneAttachment 9" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="8"]
+transform = Transform( 0.522259, -0.491636, 0.696806, -0.568353, -0.809835, -0.145402, 0.635783, -0.320095, -0.702366, -29.4833, 143.903, 13.7556 )
+
+[node name="BoneAttachment 10" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="9"]
+transform = Transform( 0.646622, 0.0423713, 0.761632, 0.254251, -0.953333, -0.162822, 0.719191, 0.29893, -0.62722, -27.2189, 145.498, 13.3801 )
+
+[node name="BoneAttachment 11" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="10"]
+transform = Transform( 0.454073, 0.385462, 0.803266, 0.760817, -0.636924, -0.124438, 0.463653, 0.667643, -0.582476, -24.7906, 146.921, 13.2447 )
+
+[node name="BoneAttachment 12" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="11"]
+transform = Transform( 0.325983, 0.479571, 0.814706, 0.893714, -0.437307, -0.100179, 0.308235, 0.760772, -0.571154, -22.9393, 146.29, 11.8993 )
+
+[node name="BoneAttachment 13" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="12"]
+transform = Transform( 0.148611, -0.530561, 0.834517, -0.802607, 0.428275, 0.415212, -0.577698, -0.731495, -0.362186, -22.3037, 146.118, 10.0559 )
+
+[node name="BoneAttachment 14" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="13"]
+transform = Transform( 0.653163, 0.0251737, -0.756799, -0.000105252, 0.99945, 0.0331543, 0.757217, -0.0215756, 0.652806, 0.952433, 2.2639, 44.7791 )
+
+[node name="BoneAttachment 15" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="14"]
+transform = Transform( -0.0297807, 0.000551072, -0.999556, 0.0186112, 0.999827, -3.31987e-06, 0.999383, -0.0186031, -0.0297859, -15.36, 1.88606, -22.5784 )
+
+[node name="HighPunchHitbox" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.0926, 5.34073 )
+visible = false
+collision_mask = 2147483660
+damage = 4
+horHit = 2
+
+[node name="CollisionShape" parent="HighPunchHitbox" index="0"]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="LowPunchHitbox" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.259, 5.45366 )
+visible = false
+collision_mask = 2147483660
+damage = 2
+horHit = 1
+
+[node name="CollisionShape" parent="LowPunchHitbox" index="0"]
+shape = SubResource( 3 )
+disabled = true
+
+[node name="HighKickHitbox" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.1806, 5.46374 )
+visible = false
+collision_mask = 2147483660
+damage = 10
+horHit = 1
+verHit = 4
+
+[node name="CollisionShape" parent="HighKickHitbox" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.580393, 0 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="LowKickHitbox" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.32446, 3.08099 )
+visible = false
+collision_mask = 2147483660
+damage = 5
+horHit = 4
+
+[node name="CollisionShape" parent="LowKickHitbox" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.580393, 1.75042 )
+shape = SubResource( 5 )
+disabled = true
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="HighPunchHitbox" to="." method="_on_HighPunchHitbox_area_entered"]
+[connection signal="area_entered" from="LowPunchHitbox" to="." method="_on_LowPunchHitbox_area_entered"]
+[connection signal="area_entered" from="HighKickHitbox" to="." method="_on_HighKickHitbox_area_entered"]
+[connection signal="area_entered" from="LowKickHitbox" to="." method="_on_LowKickHitbox_area_entered"]
+
+[editable path="CombatantAnim"]
+
+[editable path="HighPunchHitbox"]
+
+[editable path="LowPunchHitbox"]
+
+[editable path="HighKickHitbox"]
+
+[editable path="LowKickHitbox"]
