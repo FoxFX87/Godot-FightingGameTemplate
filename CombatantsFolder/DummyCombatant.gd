@@ -58,3 +58,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name in ["Reaction", "TakingPunch"] and onFloor:
 		anim.play("FightingIdle")
 		anim.playback_speed = 1.0
+
+func _on_TorsoHurtbox_incomingBlock():
+	print("Block This Attack")
+	pass # Replace with function body.

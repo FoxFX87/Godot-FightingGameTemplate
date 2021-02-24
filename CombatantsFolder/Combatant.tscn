@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FBX Files - Jan 25/CombatantAnim.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://FBX Files - Jan 25/Punching.anim" type="Animation" id=9]
 [ext_resource path="res://FBX Files - Jan 25/HighJab.anim" type="Animation" id=10]
 [ext_resource path="res://FBX Files - Jan 25/WalkBack.anim" type="Animation" id=11]
+[ext_resource path="res://Hitboxes and Hurtboxes/Blockbox.tscn" type="PackedScene" id=12]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 3, 6, 2 )
@@ -26,6 +27,9 @@ extents = Vector3( 3, 1, 4 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.64393, 1.96829, 6.84278 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1, 8.53526, 8.7833 )
 
 [node name="Combatant" type="KinematicBody"]
 collision_layer = 0
@@ -50,50 +54,65 @@ shape = SubResource( 1 )
 
 [node name="CombatantAnim" parent="." instance=ExtResource( 2 )]
 
+[node name="Skeleton" parent="CombatantAnim/AuxScene 2/Node" index="0"]
+bones/10/bound_children = [ NodePath("BoneAttachment") ]
+bones/16/bound_children = [ NodePath("BoneAttachment 2") ]
+bones/22/bound_children = [ NodePath("BoneAttachment 3") ]
+bones/28/bound_children = [ NodePath("BoneAttachment 4") ]
+bones/34/bound_children = [ NodePath("BoneAttachment 5") ]
+bones/43/bound_children = [ NodePath("BoneAttachment 6"), NodePath("BoneAttachment 7"), NodePath("BoneAttachment 8") ]
+bones/52/bound_children = [ NodePath("BoneAttachment 9") ]
+bones/58/bound_children = [ NodePath("BoneAttachment 10") ]
+bones/64/bound_children = [ NodePath("BoneAttachment 11") ]
+bones/70/bound_children = [ NodePath("BoneAttachment 12") ]
+bones/76/bound_children = [ NodePath("BoneAttachment 13") ]
+bones/90/bound_children = [ NodePath("BoneAttachment 14") ]
+bones/98/bound_children = [ NodePath("BoneAttachment 15") ]
+
 [node name="BoneAttachment" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="0"]
-transform = Transform( 0.970075, 0.176013, -0.167249, 0.239419, -0.808013, 0.538324, -0.040387, -0.562258, -0.825975, -6.86206, 142.698, 50.0694 )
+transform = Transform( 0.96342, 0.26041, -0.063308, 0.239256, -0.729336, 0.640956, 0.120738, -0.632657, -0.764962, -9.15198, 134.656, 44.7185 )
 
 [node name="BoneAttachment 2" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="1"]
-transform = Transform( 0.586314, 0.804883, -0.0916442, 0.6867, -0.433808, 0.583312, 0.429742, -0.404936, -0.807062, -4.83203, 140.742, 50.7565 )
+transform = Transform( 0.96342, 0.26041, -0.063308, 0.239256, -0.729336, 0.640957, 0.120738, -0.632658, -0.764962, -9.41316, 132.345, 45.4254 )
 
 [node name="BoneAttachment 3" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="2"]
-transform = Transform( -0.429519, 0.726432, -0.536479, 0.120458, 0.634848, 0.763189, 0.894988, 0.263181, -0.360184, -8.78298, 147.321, 46.2979 )
+transform = Transform( 0.0540535, -0.288532, -0.955943, -0.0263884, 0.956596, -0.290221, 0.998189, 0.0409132, 0.0440939, -11.7008, 136.01, 41.9695 )
 
 [node name="BoneAttachment 4" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="3"]
-transform = Transform( 0.864423, -0.441004, -0.241428, -0.258403, -0.801628, 0.539092, -0.431277, -0.403618, -0.806903, -9.12175, 145.079, 47.1118 )
+transform = Transform( 0.96342, 0.26041, -0.063308, 0.239256, -0.729336, 0.640957, 0.120738, -0.632657, -0.764962, -9.85927, 137.369, 41.6149 )
 
 [node name="BoneAttachment 5" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="4"]
-transform = Transform( 0.923326, -0.310649, -0.225756, -0.148756, -0.831316, 0.535523, -0.354034, -0.46088, -0.813787, -8.94897, 144.139, 49.3429 )
+transform = Transform( 0.96342, 0.260409, -0.0633077, 0.239255, -0.729336, 0.640957, 0.120738, -0.632657, -0.764962, -9.81284, 135.955, 43.4832 )
 
 [node name="BoneAttachment 6" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="5"]
-transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+transform = Transform( 0.981509, -0.144814, -0.125178, 0.08043, 0.905428, -0.416809, 0.173699, 0.399034, 0.900333, -1.52978, 157.207, 1.94224 )
 
 [node name="BoneAttachment 7" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="6"]
-transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+transform = Transform( 0.981509, -0.144814, -0.125178, 0.08043, 0.905428, -0.416809, 0.173699, 0.399034, 0.900333, -1.52978, 157.207, 1.94224 )
 
 [node name="BoneAttachment 8" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="7"]
-transform = Transform( 0.888659, 0.0339006, -0.457313, 0.0126346, 0.995075, 0.0983166, 0.458394, -0.093148, 0.883855, -4.02698, 154.95, -4.06235 )
+transform = Transform( 0.981509, -0.144814, -0.125178, 0.08043, 0.905428, -0.416809, 0.173699, 0.399034, 0.900333, -1.52978, 157.207, 1.94224 )
 
 [node name="BoneAttachment 9" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="8"]
-transform = Transform( 0.522259, -0.491636, 0.696806, -0.568353, -0.809835, -0.145402, 0.635783, -0.320095, -0.702366, -29.4833, 143.903, 13.7556 )
+transform = Transform( 0.660851, 0.463082, 0.59062, 0.3592, -0.88612, 0.292858, 0.658977, 0.0186152, -0.751932, -18.524, 151.829, 21.9155 )
 
 [node name="BoneAttachment 10" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="9"]
-transform = Transform( 0.646622, 0.0423713, 0.761632, 0.254251, -0.953333, -0.162822, 0.719191, 0.29893, -0.62722, -27.2189, 145.498, 13.3801 )
+transform = Transform( 0.66085, 0.463081, 0.59062, 0.3592, -0.88612, 0.292858, 0.658977, 0.018615, -0.751932, -18.4283, 153.228, 20.2242 )
 
 [node name="BoneAttachment 11" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="10"]
-transform = Transform( 0.454073, 0.385462, 0.803266, 0.760817, -0.636924, -0.124438, 0.463653, 0.667643, -0.582476, -24.7906, 146.921, 13.2447 )
+transform = Transform( 0.660872, 0.463081, 0.590596, 0.359211, -0.88612, 0.292846, 0.658951, 0.018615, -0.751956, -17.1722, 154.144, 19.1346 )
 
 [node name="BoneAttachment 12" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="11"]
-transform = Transform( 0.325983, 0.479571, 0.814706, 0.893714, -0.437307, -0.100179, 0.308235, 0.760772, -0.571154, -22.9393, 146.29, 11.8993 )
+transform = Transform( 0.660851, 0.463081, 0.590619, 0.3592, -0.88612, 0.292858, 0.658977, 0.0186149, -0.751932, -15.8162, 154.681, 17.3007 )
 
 [node name="BoneAttachment 13" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="12"]
-transform = Transform( 0.148611, -0.530561, 0.834517, -0.802607, 0.428275, 0.415212, -0.577698, -0.731495, -0.362186, -22.3037, 146.118, 10.0559 )
+transform = Transform( 0.74701, 0.203176, 0.633005, -0.18515, 0.978065, -0.0954345, -0.638511, -0.0459107, 0.768242, -14.9868, 154.946, 19.3132 )
 
 [node name="BoneAttachment 14" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="13"]
-transform = Transform( 0.653163, 0.0251737, -0.756799, -0.000105252, 0.99945, 0.0331543, 0.757217, -0.0215756, 0.652806, 0.952433, 2.2639, 44.7791 )
+transform = Transform( 0.642499, -0.033236, -0.765565, -2.99769e-08, 0.999059, -0.0433729, 0.766286, 0.027867, 0.641895, 3.1857, 0.403287, 27.1446 )
 
 [node name="BoneAttachment 15" parent="CombatantAnim/AuxScene 2/Node/Skeleton" index="14"]
-transform = Transform( -0.0297807, 0.000551072, -0.999556, 0.0186112, 0.999827, -3.31987e-06, 0.999383, -0.0186031, -0.0297859, -15.36, 1.88606, -22.5784 )
+transform = Transform( 0.143247, -0.0287258, -0.98927, 6.76839e-06, 0.999578, -0.0290243, 0.989687, 0.00415083, 0.143187, -7.04771, 0.270118, -23.9876 )
 
 [node name="HighPunchHitbox" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.0926, 5.34073 )
@@ -141,6 +160,13 @@ horHit = 4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.580393, 1.75042 )
 shape = SubResource( 5 )
 disabled = true
+
+[node name="Blockbox" parent="." instance=ExtResource( 12 )]
+
+[node name="BlockCollisionShape" parent="Blockbox" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3512, 6.7496 )
+shape = SubResource( 6 )
+disabled = true
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="HighPunchHitbox" to="." method="_on_HighPunchHitbox_area_entered"]
 [connection signal="area_entered" from="LowPunchHitbox" to="." method="_on_LowPunchHitbox_area_entered"]
@@ -156,3 +182,5 @@ disabled = true
 [editable path="HighKickHitbox"]
 
 [editable path="LowKickHitbox"]
+
+[editable path="Blockbox"]

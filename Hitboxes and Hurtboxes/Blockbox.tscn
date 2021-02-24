@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Hitboxes and Hurtboxes/Blockbox.gd" type="Script" id=1]
+
+[node name="Blockbox" type="Area"]
+collision_layer = 16
+collision_mask = 12
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Used to dictate the area and time when a player can block"
+}
+
+[node name="BlockCollisionShape" type="CollisionShape" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_Blockbox_area_entered"]
